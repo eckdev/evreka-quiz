@@ -1,21 +1,24 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
+
 import Wrapper from './Wrapper'
 import ActionButton from './ActionButton'
-import { Tabs, Tab, Content } from "./tab";
+import { Tabs, Tab, Content } from "../Tab";
+import ActionModal from './ActionModal';
 
 function Details() {
     const [active, setActive] = useState(0);
+    const [isModalOpen, setIsModalOpen] = useState(false)
     const handleClick = e => {
-      const index = parseInt(e.target.id, 0);
-      if (index !== active) {
-        setActive(index);
-      }
+        const index = parseInt(e.target.id, 0);
+        if (index !== active) {
+            setActive(index);
+        }
     };
     return (
         <Wrapper>
             <div style={{ marginBottom: '20px', textAlign: 'center' }}>
                 <ActionButton color={'#454F63'} style={{ marginRight: 6 }}>No Action Needed</ActionButton>
-                <ActionButton color={'#3DA836'}>Take Action</ActionButton>
+                <ActionButton color={'#3DA836'} onClick={() => setIsModalOpen(true)}>Take Action</ActionButton>
             </div>
             <Tabs>
                 <Tab onClick={handleClick} active={active === 0} id={0}>
@@ -40,6 +43,9 @@ function Details() {
                     <h1>Content 3</h1>
                 </Content>
             </>
+            { isModalOpen &&
+                <ActionModal onClose={setIsModalOpen} />
+            }
         </Wrapper>
     )
 }

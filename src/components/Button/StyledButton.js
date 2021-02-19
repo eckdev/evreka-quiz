@@ -3,7 +3,8 @@ import styled from 'styled-components'
 const StyledButton = styled.button`
 padding: 8px 28px;
 user-select:none;
-cursor:pointer; 
+cursor:${props => props.disabled ? 'not-allowed' : 'pointer'}; 
+opacity:${props => props.disabled ? '.4' : '1'}; 
 font-size: 16px; 
 text-transform: uppercase;
 background: ${props => props.color};
