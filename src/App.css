@@ -6,7 +6,79 @@ body {
   background-color: #EBECEF;
 }
 
+.d-flex{
+  display: flex;
+}
+
+.table-wrapper{
+  width:60%;
+}
+.detail-wrapper{
+  width: 40%;
+}
+
+.header{
+  font-size: 23px;
+  color:#172C49;
+  text-transform: uppercase;
+  padding-top: 80px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  font-weight: bold;
+  display: block;
+}
+
+.action-buttons{
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.details-container{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: flex;
+}
+
+.vehicle-container{
+  display: flex;
+  flex-direction: column;
+  margin-right: 50px;
+}
+
+.media-container{
+  margin-top:20px;
+  position: relative;
+}
+
+.fullscreen-btn{
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  float: right;
+  padding:18px;
+}
+
 .leaflet-div-icon{
   background: transparent;
   border:none
+}
+.three-dot{
+  display: inline-block;
+  width: 180px;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+}
+
+@media (max-width:768px){
+  .table-wrapper{
+    width:100%;
+  }
+  .detail-wrapper{
+    width: 100%;
+  }
+  .d-flex{
+    flex-direction: column;
+  }
 }

@@ -30,7 +30,7 @@ function Details({ data, selectedIndex, setEvrekaData }) {
 
     return (
         <Wrapper>
-            <div style={{ marginBottom: '20px', textAlign: 'center' }}>
+            <div className="action-buttons">
                 {
                     data[selectedIndex].details.filter(x => x.title === 'Aksiyon')[0].value === '-' ?
                         <>
@@ -54,8 +54,8 @@ function Details({ data, selectedIndex, setEvrekaData }) {
             </Tabs>
             <>
                 <Content active={active === 0}>
-                    <div style={{ marginTop: '30px', marginBottom: '30px', display: 'flex' }}>
-                        <div style={{ display: 'flex', flexDirection: 'column', marginRight: '50px' }}>
+                    <div className="details-container">
+                        <div className="vehicle-container">
                             <span style={{ color: '#172C49', fontWeight: 'bold' }}>{data[selectedIndex].details.filter(x => x.format === 'vehicle')[0].title}</span>
                             <span style={{ color: '#172C49' }}>{data[selectedIndex].details.filter(x => x.format === 'vehicle')[0].value}</span>
                         </div>
@@ -67,7 +67,7 @@ function Details({ data, selectedIndex, setEvrekaData }) {
                             detail &&
                             <div style={{ display: 'flex', flexDirection: 'column' }}>
                                 <span style={{ color: '#172C49', fontWeight: 'bold' }}>Detail</span>
-                                <span style={{ color: '#172C49' }}>{detail}</span>
+                                <span style={{ color: '#172C49' }} className="three-dot">{detail}</span>
                             </div>
                         }
                     </div>
@@ -86,7 +86,7 @@ function Details({ data, selectedIndex, setEvrekaData }) {
                     </MapContainer>
                 </Content>
                 <Content active={active === 2}>
-                    <div style={{ marginTop: '20px', position: 'relative' }}>
+                    <div className="media-container">
                         {
                             data[selectedIndex].media[0].url ?
                                 (
@@ -98,7 +98,7 @@ function Details({ data, selectedIndex, setEvrekaData }) {
                                         :
                                         <>
                                             <img src={data[selectedIndex].media[0].url} alt="" width="100%" height="260" style={{ position: 'relative' }} />
-                                            <img src="images/fullscreen.jpg" onClick={() => setIsImgModalOpen(true)} width="20" height="20" alt="fullscreen" style={{ cursor: 'pointer', position: 'absolute', bottom: '0', right: '0', float: 'right', padding: '18px' }} />
+                                            <img src="images/fullscreen.jpg" onClick={() => setIsImgModalOpen(true)} width="20" height="20" alt="fullscreen" className="fullscreen-btn" />
                                             {isImgModalOpen &&
                                                 <Modal onClose={setIsImgModalOpen}>
                                                     <img src={data[selectedIndex].media[0].url} alt="" width="100%" height="400" />
