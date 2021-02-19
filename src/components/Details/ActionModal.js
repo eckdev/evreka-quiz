@@ -8,7 +8,7 @@ import Button from '../Button/StyledButton'
 import Textarea from '../Textarea'
 import Alert from '../Alert'
 
-function ActionModal({onClose}) {
+function ActionModal({onClose,setAction,setDetail}) {
     const [active, setActive] = useState(0);
     const [isSelectAction, setIsSelectAction] = useState(false)
     const [activeAction, setActiveAction] = useState(null);
@@ -37,7 +37,10 @@ function ActionModal({onClose}) {
                 setError(true)
             }
             else {
-                setError(false)
+                let selectedActionText = activeAction === 0 ? 'Mark As Resolved' : 'Change Asset';
+                setError(false);
+                setAction(selectedActionText);
+                setDetail(textAreaVal)
             }
             setLoading(false);
         }, 1000);

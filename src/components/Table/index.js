@@ -25,12 +25,13 @@ function Table({
             setselectedIndex(idx)
         }
     }
-    
+   
     return (
         <Wrapper onClick={(e) => clickTableItem(e)} isSelected={selectedIndex === index} id={index}>
             {
-                cardData.map((result, index) => (
-                    index < 5 ? <Container key={index}>
+                cardData.map((result, idx) => (
+                    idx < 5 ? 
+                    <Container key={idx}>
                         {result.title === 'Aksiyon' && result.value === '-' ? <Drag /> : null}
                         <Content isBold={true}>{result.title}</Content>
                         <Content isBold={false}>{result.title === 'Tarih' ? convertDate(result.value) : result.value}</Content>
