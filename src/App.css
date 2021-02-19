@@ -6,3 +6,7 @@ body {
   background-color: #EBECEF;
 }
 
+.leaflet-div-icon{
+  background: transparent;
+  border:none
+}
