@@ -65,7 +65,7 @@ function Details({ data, selectedIndex, setEvrekaData }) {
                         </div>
                         {
                             detail &&
-                            <div style={{ display: 'flex', flexDirection: 'column' }}>
+                            <div style={{ display: 'flex', flexDirection: 'column',marginLeft:'50px' }}>
                                 <span style={{ color: '#172C49', fontWeight: 'bold' }}>Detail</span>
                                 <span style={{ color: '#172C49' }} className="three-dot">{detail}</span>
                             </div>
